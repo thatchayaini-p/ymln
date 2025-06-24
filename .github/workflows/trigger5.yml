@@ -1,0 +1,13 @@
+name: Trigger 5
+
+on:
+  workflow_run:
+    workflows: ["Trigger 4"]
+    types:
+      - completed
+
+jobs:
+  next:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "➡️ Trigger 5 started"
